@@ -1,0 +1,46 @@
+{
+	"info": {
+		"_postman_id": "8fe22938-27f8-46f0-a790-6b0db9eb7a2d",
+		"name": "Yu-Gi-Oh API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "37458199"
+	},
+	"item": [
+		{
+			"name": "Get Cards Info",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://db.ygoprodeck.com/api/v7/cardinfo.php?&startdate=2000-01-01&enddate=2024-08-04",
+					"protocol": "https",
+					"host": [
+						"db",
+						"ygoprodeck",
+						"com"
+					],
+					"path": [
+						"api",
+						"v7",
+						"cardinfo.php"
+					],
+					"query": [
+						{
+							"key": null,
+							"value": null
+						},
+						{
+							"key": "startdate",
+							"value": "2000-01-01"
+						},
+						{
+							"key": "enddate",
+							"value": "2024-08-04"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

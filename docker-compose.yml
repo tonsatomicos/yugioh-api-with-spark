@@ -1,0 +1,65 @@
+name: yugioh-api-with-spark
+
+services:
+  spark-master:
+    container_name: yugioh-api-with-spark-master
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: yugioh-api-with-spark-image
+    entrypoint: ['./entrypoint.sh', 'master']
+    healthcheck:
+      test: [ "CMD", "curl", "-f", "http://localhost:8080" ]
+      interval: 5s
+      timeout: 3s
+      retries: 3
+    volumes:
+      - ./data/input:/opt/spark/yugioh-api-with-spark/data/input
+      - ./data/output:/opt/spark/yugioh-api-with-spark/data/output
+      - ./logs:/opt/spark/yugioh-api-with-spark/logs
+      - ./yugioh-api-with-spark:/opt/spark/yugioh-api-with-spark/yugioh-api-with-spark
+      - ./notebook:/opt/spark/yugioh-api-with-spark/notebook
+      - spark-logs:/opt/spark/spark-events
+    env_file:
+      - .env.spark
+    ports:
+      - '9091:8080'
+      - '7071:7077'
+    networks:
+      - spark-network
+
+  spark-history-server:
+    container_name: yugioh-api-with-spark-history
+    image: yugioh-api-with-spark-image
+    entrypoint: ['./entrypoint.sh', 'history']
+    depends_on:
+      - spark-master
+    env_file:
+      - .env.spark
+    volumes:
+      - spark-logs:/opt/spark/spark-events
+    ports:
+      - '18081:18080'
+    networks:
+      - spark-network
+
+  spark-worker:
+    image: yugioh-api-with-spark-image
+    entrypoint: ['./entrypoint.sh', 'worker']
+    depends_on:
+      - spark-master
+    env_file:
+      - .env.spark
+    volumes:
+      - ./data/input:/opt/spark/yugioh-api-with-spark/data/input
+      - ./data/output:/opt/spark/yugioh-api-with-spark/data/output
+      - spark-logs:/opt/spark/spark-events
+    networks:
+      - spark-network
+
+volumes:
+  spark-logs:
+
+networks:
+  spark-network:
+    driver: bridge
