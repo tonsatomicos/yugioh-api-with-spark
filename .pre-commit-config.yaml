@@ -17,10 +17,12 @@ repos:
     rev: 5.13.2
     hooks:
       - id: isort
+        args: ['--config=config/.isort.cfg'] 
         files: \.py$
 
   - repo: https://github.com/PyCQA/flake8
     rev: 7.1.1
     hooks:
       - id: flake8
+        args: ['--config=config/.flake8'] 
         files: \.py$
