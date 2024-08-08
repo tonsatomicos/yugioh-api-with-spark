@@ -15,7 +15,7 @@ Para realizar o projeto, utilizei Docker para criar e configurar os recursos nec
 
 ## Estrutura
 
- Utilizando <code>Docker</code> para criar os containers necessários e configurar o ambiente de execução. Utilizei o arquivo <code>pyproject.toml</code> como fonte das dependências para instalação na imagem <code>Docker</code>. 
+ Utilizando Docker para criar os containers necessários e configurar o ambiente de execução. Utilizei o arquivo <code>pyproject.toml</code> como fonte das dependências para instalação na imagem <code>Docker</code>. 
 
 ### Versão do Python
 ```bash
@@ -38,7 +38,7 @@ Para realizar o projeto, utilizei Docker para criar e configurar os recursos nec
 
 ## Configurações do Projeto - Parte 1
 
-Como mencionado anteriormente, optei por desenvolver o projeto utilizando a infraestrutura gerada pelos containers Docker. Todo o ambiente já está pronto para replicação. Não entrarei nos detalhes técnicos, mas sinta-se à vontade para adaptar o projeto sem a necessidade de usar Docker.
+Como mencionado anteriormente, optei por desenvolver o projeto utilizando a infraestrutura gerada pelos containers Docker. Todo o ambiente está pronto para replicação. Não entrarei nos detalhes técnicos, mas sinta-se à vontade para adaptar o projeto sem a necessidade de usar Docker.
 
 ### Como usar?
 
