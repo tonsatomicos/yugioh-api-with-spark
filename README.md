@@ -35,6 +35,7 @@ Para realizar o projeto, utilizei Docker para configurar e gerenciar os recursos
 - flake8
 - black
 - isort
+- sparksql_magic
 
 ## Configurações do Projeto - Parte 1
 
