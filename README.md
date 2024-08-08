@@ -73,6 +73,7 @@ Após executar o comando, observe os <code>logs</code> para acompanhar o andamen
 ## Considerações Finais
 
 - A documentação pode não estar totalmente detalhada, e um certo nível de conhecimento pode ser necessário para entender o projeto.
+- Disponibilizei um Jupyter Notebook na pasta <code>notebook</code>, com uma visão mais simples e direta do que fiz neste projeto.
 - Tentei aplicar os conceitos de SOLID neste projeto, o que pode fazer com que a estrutura pareça um pouco confusa.
 <hr>
 
