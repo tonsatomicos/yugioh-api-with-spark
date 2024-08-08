@@ -37,7 +37,7 @@ Para realizar o projeto, utilizei Docker para configurar e gerenciar os recursos
 - isort
 - sparksql_magic
 
-## Configurações do Projeto - Parte 1
+## Configurações do Projeto
 
 Como mencionado anteriormente, optei por desenvolver o projeto utilizando a infraestrutura fornecida pelos containers Docker. Todo o ambiente está configurado para fácil replicação. Não abordarei os detalhes técnicos aqui, mas sinta-se à vontade para adaptar o projeto conforme necessário, com ou sem Docker.
 
@@ -55,7 +55,7 @@ Este comando iniciará os containers e escalará o número de workers do Spark c
 
 Atenção: se estiver no Windows, verifique se a formatação dos arquivos <code>Dockerfile</code>, <code>docker-compose.yml</code> e <code>entrypoint.sh</code> está como LF e não CRLF.
 
-## Configurações do Projeto - Parte 2
+## Conclusão
 
 O <code>docker-compose.yml</code> está configurado para mapear as principais pastas do projeto.
 
@@ -66,8 +66,6 @@ python yugioh-with-spark/pipeline/pipeline_main.py
 ```
 
 Isso irá executar o pipeline principal do projeto.
-
-## Conclusão
 
 Após executar o comando, observe os <code>logs</code> para acompanhar o andamento do processamento e verifique a pasta <code>data/output</code> para conferir os resultados gerados.
 
