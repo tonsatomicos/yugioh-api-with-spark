@@ -9,7 +9,7 @@ Este projeto foi concebido como parte de um desafio durante a disciplina de Proc
 
 O desafio consistia em desenvolver um projeto utilizando Spark. Optei por consumir e processar os dados obtidos através da API do Yu-Gi-Oh! TCG.
 
-Para realizar o projeto, utilizei <code>Docker</code> para criar e configurar os recursos necessários para o <code>Spark</code>, e para desenvolver e rodar os scripts. Usei <code>Requests</code> para a extração dos dados da <code>API</code> do <code>Yu-Gi-Oh! TCG</code> e <code>PySpark</code> para o processamento dos dados, que foram salvos em arquivos<code>Parquet</code> particionados.
+Para realizar o projeto, utilizei Docker para criar e configurar os recursos necessários para o Spark, e para desenvolver e rodar os scripts. Usei <code>Requests</code> para a extração dos dados da <code>API</code> do Yu-Gi-Oh! TCG e <code>PySpark</code> para o processamento dos dados, que foram salvos em arquivos<code>Parquet</code> particionados.
 
 ## Etapas
 
@@ -53,7 +53,7 @@ Este comando iniciará os containers e escalará o número de workers do Spark c
 
 ## Configurações do Projeto - Parte 2
 
-O <code>docker-compose.yml</code> está configurado para mapear as pastas de <code>dados(input e output)</code>, <code>logs</code>, <code>notebooks</code>, e <code>yugioh-api-with-spark</code>, que é a pasta dos <code>scripts</code> e o nosso <code>core</code>.
+O <code>docker-compose.yml</code> está configurado para mapear as principais pastas do projeto.
 
 Acesse o container master. Você pode se conectar ao container master usando o VSCode, o terminal do Windows/Linux com Docker Engine ou através do Docker Desktop. Navegue até a pasta <code>/opt/spark/yugioh-with-spark</code> e execute o seguinte comando:
 
