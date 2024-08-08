@@ -40,7 +40,7 @@ Para realizar o projeto, utilizei Docker para configurar e gerenciar os recursos
 
 Como mencionado anteriormente, optei por desenvolver o projeto utilizando a infraestrutura fornecida pelos containers Docker. Todo o ambiente está configurado para fácil replicação. Não abordarei os detalhes técnicos aqui, mas sinta-se à vontade para adaptar o projeto conforme necessário, com ou sem Docker.
 
-No entanto, faz sentido que, ao tentar replicar este projeto, você siga a mesma abordagem que eu e utilize Docker. Isso garantirá que o ambiente e as dependências estejam configurados corretamente, proporcionando uma experiência mais consistente e eficiente.
+No entanto, faz sentido que, ao tentar replicar este projeto, você siga a mesma abordagem que eu e utilize Docker. Isso garantirá que o ambiente e as dependências estejam configuradas corretamente, proporcionando uma experiência mais consistente e eficiente.
 
 ### Como usar?
 
