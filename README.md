@@ -69,8 +69,8 @@ Após executar o comando, basta observar os <code>logs</code> para verificar o a
 
 ## Considerações Finais
 
-- A documentação pode não estar tão detalhada, talvez seja necessário um certo nível de conhecimento para adaptar o código.
-- Tentei aplicar os conceitos de SOLID nesse projeto, por isso a estrutura pode parecer uma pouco confusa.
+- A documentação pode não estar totalmente detalhada, e um certo nível de conhecimento pode ser necessário para entender o projeto.
+- Tentei aplicar os conceitos de SOLID neste projeto, o que pode fazer com que a estrutura pareça um pouco confusa.
 <hr>
 
 ![Image](https://i.imgur.com/p4vnGAN.gif)
