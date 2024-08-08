@@ -9,13 +9,13 @@ Este projeto foi concebido como parte de um desafio durante a disciplina de Proc
 
 O desafio consistia em desenvolver um projeto utilizando Spark. Optei por consumir e processar os dados obtidos através da API do Yu-Gi-Oh! TCG.
 
-Para realizar o projeto, utilizei Docker para criar e configurar os recursos necessários para o Spark, e para desenvolver e rodar os scripts. Usei <code>Requests</code> para a extração dos dados da <code>API</code> do Yu-Gi-Oh! TCG e <code>PySpark</code> para o processamento dos dados, que foram salvos em arquivos<code>Parquet</code> particionados.
+Para realizar o projeto, utilizei Docker para configurar e gerenciar os recursos necessários para o Spark, além de executar o pipeline. Usei <code>Requests</code> para a extração dos dados da <code>API</code> do Yu-Gi-Oh! TCG e <code>PySpark</code> para o processamento dos dados, que foram salvos em arquivos<code>Parquet</code> particionados.
 
 ## Etapas
 
 ## Estrutura
 
- Utilizando Docker para criar os containers necessários e configurar o ambiente de execução. Utilizei o arquivo <code>pyproject.toml</code> como fonte das dependências para instalação na imagem <code>Docker</code>. 
+ Utilizando Docker para criar os containers necessários e configurar o ambiente de execução. Utilizei o arquivo <code>pyproject.toml</code> como fonte das dependências para instalação na imagem Docker. 
 
 ### Versão do Python
 ```bash
@@ -38,7 +38,9 @@ Para realizar o projeto, utilizei Docker para criar e configurar os recursos nec
 
 ## Configurações do Projeto - Parte 1
 
-Como mencionado anteriormente, optei por desenvolver o projeto utilizando a infraestrutura gerada pelos containers Docker. Todo o ambiente está pronto para replicação. Não entrarei nos detalhes técnicos, mas sinta-se à vontade para adaptar o projeto sem a necessidade de usar Docker.
+Como mencionado anteriormente, optei por desenvolver o projeto utilizando a infraestrutura fornecida pelos containers Docker. Todo o ambiente está configurado para fácil replicação. Não abordarei os detalhes técnicos aqui, mas sinta-se à vontade para adaptar o projeto conforme necessário, com ou sem Docker.
+
+No entanto, faz sentido que, ao tentar replicar este projeto, você siga a mesma abordagem que eu e utilize Docker. Isso garantirá que o ambiente e as dependências estejam configurados corretamente, proporcionando uma experiência mais consistente e eficiente.
 
 ### Como usar?
 
@@ -50,12 +52,11 @@ docker compose -f docker-compose.yml up -d --scale spark-worker=2
 
 Este comando iniciará os containers e escalará o número de workers do Spark conforme definido no arquivo <code>docker-compose.yml</code>.
 
-
 ## Configurações do Projeto - Parte 2
 
 O <code>docker-compose.yml</code> está configurado para mapear as principais pastas do projeto.
 
-Acesse o container master. Você pode se conectar ao container master usando o VSCode, o terminal do Windows/Linux com Docker Engine ou através do Docker Desktop. Navegue até a pasta <code>/opt/spark/yugioh-with-spark</code> e execute o seguinte comando:
+Acesse o container master usando o VSCode, o terminal do Windows/Linux com Docker Engine ou o Docker Desktop. Navegue até a pasta /opt/spark/yugioh-with-spark e execute:
 
 ```bash
 python yugioh-with-spark/pipeline/pipeline_main.py
@@ -65,7 +66,7 @@ Isso irá executar o pipeline principal do projeto.
 
 ## Conclusão
 
-Após executar o comando, basta observar os <code>logs</code> para verificar o andamento do processamento e checar a pasta <code>data/output</code> para os resultados gerados.
+Após executar o comando, observe os <code>logs</code> para acompanhar o andamento do processamento e verifique a pasta <code>data/output</code> para conferir os resultados gerados.
 
 ## Considerações Finais
 
