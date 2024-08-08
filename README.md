@@ -9,7 +9,7 @@ Este projeto foi concebido como parte de um desafio durante a disciplina de Proc
 
 O desafio consistia em desenvolver um projeto utilizando Spark. Optei por consumir e processar os dados obtidos através da API do Yu-Gi-Oh! TCG.
 
-Para realizar o projeto, utilizei Docker para configurar e gerenciar os recursos necessários para o Spark, além de executar o pipeline. Usei <code>Requests</code> para a extração dos dados da <code>API</code> do Yu-Gi-Oh! TCG e <code>PySpark</code> para o processamento dos dados, que foram salvos em arquivos<code>Parquet</code> particionados.
+Para realizar o projeto, utilizei Docker para configurar e gerenciar os recursos necessários para o Spark, além de executar o pipeline. Usei <code>Requests</code> para a extração dos dados da API do Yu-Gi-Oh! TCG e <code>PySpark</code> para o processamento dos dados, que foram salvos em arquivos parquet particionados.
 
 ## Etapas
 
@@ -44,7 +44,7 @@ No entanto, faz sentido que, ao tentar replicar este projeto, você siga a mesma
 
 ### Como usar?
 
-Suba a imagem e os containers. Acesse a pasta do projeto e execute o seguinte comando:
+Acesse a pasta raiz do projeto e execute o seguinte comando para subir a imagem e os containers: 
 
 ```bash
 docker compose -f docker-compose.yml up -d --scale spark-worker=2
