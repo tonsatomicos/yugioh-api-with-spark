@@ -40,7 +40,7 @@ ENV SPARK_MASTER_HOST spark-master
 ENV SPARK_MASTER_PORT 7077
 ENV PYSPARK_PYTHON python3
 
-COPY conf/spark-defaults.conf "$SPARK_HOME/conf"
+COPY ./conf/spark-defaults.conf "$SPARK_HOME/conf"
 
 COPY pyproject.toml .
 
@@ -52,7 +52,7 @@ RUN chmod u+x /opt/spark/sbin/* && \
 
 ENV PYTHONPATH=$SPARK_HOME/python/:$PYTHONPATH
 
-COPY infra/docker/entrypoint.sh .
+COPY ./infra/docker/entrypoint.sh .
 
 RUN chmod +x entrypoint.sh
 
