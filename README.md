@@ -53,6 +53,8 @@ docker compose -f docker-compose.yml up -d --scale spark-worker=2
 
 Este comando iniciará os containers e escalará o número de workers do Spark conforme definido no arquivo <code>docker-compose.yml</code>.
 
+<hr>
+
 Atenção: se estiver no Windows, verifique se a formatação dos arquivos <code>Dockerfile</code>, <code>docker-compose.yml</code> e <code>entrypoint.sh</code> está como LF e não CRLF.
 
 ## Conclusão
