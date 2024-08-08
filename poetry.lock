@@ -1144,6 +1144,21 @@ files = [
 ]
 
 [[package]]
+name = "sparksql-magic"
+version = "0.0.3"
+description = "Spark SQL magic command for Jupyter notebooks"
+optional = false
+python-versions = ">=3.6"
+files = [
+    {file = "sparksql-magic-0.0.3.tar.gz", hash = "sha256:8827b0094fa6019d21da5894e483f892889c3918fc356b562dedbc8b360d7fb8"},
+    {file = "sparksql_magic-0.0.3-py36-none-any.whl", hash = "sha256:ec0cd21bf0964444b8c573245d91d588529b230748b7d7b7c541a35f4703da77"},
+]
+
+[package.dependencies]
+ipython = ">=7.4.0"
+pyspark = ">=2.3.0"
+
+[[package]]
 name = "stack-data"
 version = "0.6.3"
 description = "Extract data from python stack frames and tracebacks for informative displays"
@@ -1273,4 +1288,4 @@ dev = ["black (>=19.3b0)", "pytest (>=4.6.2)"]
 [metadata]
 lock-version = "2.0"
 python-versions = "3.11.9"
-content-hash = "3d53aa119ebd3620dc01176aecc67eafe2b43823327ecdf802641fc47d64db76"
+content-hash = "9e217b30ce17ed26dd740b6535acc42fd0fac123be37f1a841034bfde4e561ed"
