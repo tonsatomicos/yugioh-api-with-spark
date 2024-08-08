@@ -44,7 +44,7 @@ No entanto, faz sentido que, ao tentar replicar este projeto, você siga a mesma
 
 ### Como usar?
 
-Acesse a pasta raiz do projeto e execute o seguinte comando para subir a imagem e os containers: 
+Acesse a pasta raiz do projeto e execute o seguinte comando: 
 
 ```bash
 docker compose -f docker-compose.yml up -d --scale spark-worker=2
