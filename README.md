@@ -27,7 +27,6 @@ Para realizar o projeto, utilizei Docker para configurar e gerenciar os recursos
 - pyspark
 - requests
 - loguru
-- pre-commit
 
 ### Dependências | Desenvolvimento
 
@@ -36,6 +35,7 @@ Para realizar o projeto, utilizei Docker para configurar e gerenciar os recursos
 - black
 - isort
 - sparksql_magic
+- pre-commit
 
 ## Configurações do Projeto
 
