@@ -1,21 +1,21 @@
 # <p align="center">Projeto de Processamento Distribuído<br>API Yu-Gi-Oh! TCG</p>
 
 <p align="center">
-<img src="http://img.shields.io/static/v1?label=LICENCA&message=...&color=GREEN&style=for-the-badge"/>
+<img src="http://img.shields.io/static/v1?label=LICENCA&message=N/A&color=GREEN&style=for-the-badge"/>
 <img src="http://img.shields.io/static/v1?label=STATUS&message=N/A&color=GREEN&style=for-the-badge"/>
 </p>
 
-Este projeto foi concebido como parte de um desafio durante a disciplina de Processamento Distribuído, no curso de pós-graduação em Engenharia de Dados, na Universidade de Fortaleza (Unifor).
+Este projeto foi desenvolvido como parte de um desafio na disciplina de Processamento Distribuído do curso de pós-graduação em Engenharia de Dados na Universidade de Fortaleza (Unifor). 
 
-O desafio consistia em desenvolver um projeto utilizando Spark. Optei por consumir e processar os dados obtidos através da API do Yu-Gi-Oh! TCG.
+O objetivo principal do desafio era explorar e aplicar o Apache Spark para processamento de dados distribuído.
 
-Para realizar o projeto, utilizei Docker para configurar e gerenciar os recursos necessários para o Spark, além de executar o pipeline. Usei <code>Requests</code> para a extração dos dados da API do Yu-Gi-Oh! TCG e <code>PySpark</code> para o processamento dos dados, que foram salvos em arquivos parquet particionados.
+Como caso de uso, escolhi trabalhar com dados da API do Yu-Gi-Oh! TCG. Utilizei a biblioteca <code>requests</code> para a extração dos dados e o <code>pyspark</code> para a transformação e carregamento, todos executados em um ambiente Docker configurado com o Spark.
 
 ## Etapas
 
 ## Estrutura
 
- Utilizando Docker para criar os containers necessários e configurar o ambiente de execução. Utilizei o arquivo <code>pyproject.toml</code> como fonte das dependências para instalação na imagem Docker. 
+A estrutura do projeto foi organizada para ser replicável e de fácil manutenção. Utilizei Docker para criar os containers necessários e configurar o ambiente de execução. O arquivo <code>pyproject.toml</code> foi utilizado para gerenciar as dependências.
 
 ### Versão do Python
 ```bash
@@ -37,43 +37,51 @@ Para realizar o projeto, utilizei Docker para configurar e gerenciar os recursos
 - sparksql_magic
 - pre-commit
 
-## Configurações do Projeto
+## Configuração e Execução
 
-Como mencionado anteriormente, optei por desenvolver o projeto utilizando a infraestrutura fornecida pelos containers Docker. Todo o ambiente está configurado para fácil replicação. Não abordarei os detalhes técnicos aqui, mas sinta-se à vontade para adaptar o projeto conforme necessário, com ou sem Docker.
+Como mencionado anteriormente, optei por desenvolver o projeto utilizando a infraestrutura fornecida pelos containers Docker. Todo o ambiente está configurado para fácil replicação. Não abordarei os detalhes técnicos aqui, mas sinta-se à vontade para adaptar o projeto, com ou sem Docker.
 
 No entanto, faz sentido que, ao tentar replicar este projeto, você siga a mesma abordagem que eu e utilize Docker. Isso garantirá que o ambiente e as dependências estejam configuradas corretamente, proporcionando uma experiência mais consistente e eficiente.
 
 ### Como usar?
 
-Acesse a pasta raiz do projeto e execute o seguinte comando: 
+#### Clone o Repositório
+
+Execute o seguinte comando:
+
+```bash
+git clone https://github.com/tonsatomicos/yugioh-api-with-spark.git
+```
+
+#### Inicie os Containers
+
+Navegue até a pasta raiz do projeto e execute o seguinte comando para iniciar os containers Docker: 
 
 ```bash
 docker compose -f docker-compose.yml up -d --scale spark-worker=2
 ```
 
+> Nota: Se estiver no Windows, certifique-se de que os arquivos <code>Dockerfile</code>, <code>docker-compose.yml</code> e <code>entrypoint.sh</code> estejam com a formatação LF, e não CRLF.
+
 Este comando iniciará os containers e escalará o número de workers do Spark conforme definido no arquivo <code>docker-compose.yml</code>.
 
-Atenção: se estiver no Windows, verifique se a formatação dos arquivos <code>Dockerfile</code>, <code>docker-compose.yml</code> e <code>entrypoint.sh</code> está como LF e não CRLF.
+#### Execute o Pipeline Principal
 
-## Conclusão
-
-O <code>docker-compose.yml</code> está configurado para mapear as principais pastas do projeto.
-
-Acesse o container master usando o VSCode, o terminal do Windows/Linux com Docker Engine ou o Docker Desktop. Navegue até a pasta /opt/spark/yugioh-with-spark e execute:
+Acesse o container master utilizando o terminal ou VSCode. Navegue até a pasta <code>/opt/spark/yugioh-with-spark</code> e execute:
 
 ```bash
 python yugioh-with-spark/pipeline/pipeline_main.py
 ```
 
-Isso irá executar o pipeline principal do projeto.
+## Conclusão
 
-Após executar o comando, observe os <code>logs</code> para acompanhar o andamento do processamento e verifique a pasta <code>data/output</code> para conferir os resultados gerados.
+Monitore o andamento do pipeline acompanhando os logs gerados durante a execução. Eles serão armazenados na pasta <code>/logs</code>, e os resultados do processamento estarão disponíveis na pasta <code>/data/output</code>.
 
 ## Considerações Finais
 
 - A documentação pode não estar totalmente detalhada, e um certo nível de conhecimento pode ser necessário para entender o projeto.
-- Disponibilizei um Jupyter Notebook na pasta <code>notebook</code>, com uma visão mais simples e direta do que fiz neste projeto.
-- Tentei aplicar os conceitos de SOLID neste projeto, o que pode fazer com que a estrutura pareça um pouco confusa.
+- Um Jupyter Notebook está disponível na pasta <code>/notebook</code>, oferecendo uma visão simplificada e mais direta do projeto.
+- O projeto foi estruturado utilizando os princípios SOLID, visando manter uma arquitetura limpa e extensível.
 <hr>
 
 ![Image](https://i.imgur.com/p4vnGAN.gif)
