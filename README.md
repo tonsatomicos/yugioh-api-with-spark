@@ -77,7 +77,7 @@ python yugioh-with-spark/pipeline/pipeline_main.py
 
 Monitore o andamento do pipeline acompanhando os logs gerados durante a execução. Eles serão armazenados na pasta <code>/logs</code>, e os resultados do processamento estarão disponíveis na pasta <code>/data/output</code>.
 
-Você também pode monitorar o status dos workers e da aplicação no Spark Master através do link <code>http://localhost:9091/</code e visualizar os logs da aplicação no History Server em <code>http://localhost:18081/</code>.
+Você também pode monitorar o status dos workers e da aplicação no Spark Master através do link <code>http://localhost:9091/</code> e visualizar os logs da aplicação no History Server em <code>http://localhost:18081/</code>.
 
 ## Considerações Finais
 
